@@ -280,7 +280,7 @@ public class Transaction {
                 deliveredIntent.putExtra("message_uri", messageUri == null ? "" : messageUri.toString());
                 deliveredIntent.putExtra(DELIVERED_SMS_BUNDLE, deliveredParcelable);
                 PendingIntent deliveredPI = PendingIntent.getBroadcast(
-                        context, messageId, deliveredIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+                        context, messageId, deliveredIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 ArrayList<PendingIntent> sPI = new ArrayList<PendingIntent>();
                 ArrayList<PendingIntent> dPI = new ArrayList<PendingIntent>();
