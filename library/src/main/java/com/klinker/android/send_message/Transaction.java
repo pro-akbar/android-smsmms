@@ -267,7 +267,7 @@ public class Transaction {
                 sentIntent.putExtra("message_uri", messageUri == null ? "" : messageUri.toString());
                 sentIntent.putExtra(SENT_SMS_BUNDLE, sentMessageParcelable);
                 PendingIntent sentPI = PendingIntent.getBroadcast(
-                        context, messageId, sentIntent, PendingIntent.FLAG_MUTABLE);
+                        context, messageId, sentIntent, PendingIntent.FLAG_IMMUTABLE);
 
                 Intent deliveredIntent;
                 if (explicitDeliveredSmsReceiver == null) {
